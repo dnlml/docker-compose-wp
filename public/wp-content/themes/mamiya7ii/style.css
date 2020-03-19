@@ -1,0 +1,40 @@
+/*
+Theme Name:     Mamiya7ii
+Theme URI:      https://danielemeli.com/mamiya7ii
+Description:    Tema per il blog Mamiya7ii
+Author:         Daniele Meli
+Author URI:     https://danielemeli.com
+Template:       kouki
+Version:        0.1.0
+*/
+
+figure {
+  margin: 0;
+}
+
+a {
+  color: #607d8b;
+  text-decoration: underline;
+}
+
+.entry-content h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.footer-links a {
+  color: #607d8b;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.image--rotated-180 {
+  transform: rotate(180deg);
+}
