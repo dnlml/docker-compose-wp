@@ -19,9 +19,12 @@ services:
     image: wordpress:latest
     expose:
       - 80
+      - 443
     restart: always
     environment:
       VIRTUAL_HOST: formato120.it
+      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
       WORDPRESS_DB_HOST: formato120_mysql:3306
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
