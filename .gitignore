@@ -24,3 +24,5 @@ public/wp-content/themes/twenty*/
 *.log
 *.sql
 *.sqlite
+
+*.swp
