@@ -22,7 +22,7 @@ services:
       - 443
     restart: always
     environment:
-      VIRTUAL_HOST: formato120.it
+      VIRTUAL_HOST: formato120.it,www.formato120.it
       LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
       WORDPRESS_DB_HOST: ${MSQL_CONTAINER_NAME}:3306
