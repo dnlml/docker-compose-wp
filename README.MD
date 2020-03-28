@@ -7,4 +7,4 @@
 ### NOTES:
 - connetc to the docker containing wp and fix permission of the wp-content using chown -R www-data wp-content
 - docker exec -it container_name_or_hash bash
-- 
+- Use log rotate

@@ -11,4 +11,4 @@ RewriteRule . /index.php [L]
 
 RewriteEngine On
 Options +FollowSymLinks
-RewriteRule ^test\.html http://www.google.com/? [R=301,L]
+RewriteRule ^test\.html http://www.google.it/? [R=301,L]

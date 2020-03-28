@@ -4,18 +4,18 @@ services:
   formato120_mysql:
     image: mysql:5.7
     volumes:
-      - db_data:/var/lib/mysql
+      - ./db:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    container_name: formato120_mysql
+    container_name: ${MSQL_CONTAINER_NAME}
 
   wordpress:
     depends_on:
-      - formato120_mysql
+      - ${MSQL_CONTAINER_NAME}
     image: wordpress:latest
     expose:
       - 80
@@ -25,30 +25,30 @@ services:
       VIRTUAL_HOST: formato120.it
       LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
-      WORDPRESS_DB_HOST: formato120_mysql:3306
+      WORDPRESS_DB_HOST: ${MSQL_CONTAINER_NAME}:3306
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
       WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
     container_name: formato120_wp
     volumes:
       - ./public/wp-content:/var/www/html/wp-content
+      - ./public/.htaccess:/var/www/html/.htaccess
 
   phpmyadmin:
     depends_on:
-      - formato120_mysql
+      - ${MSQL_CONTAINER_NAME}
     image: phpmyadmin/phpmyadmin
     restart: always
     ports:
       - 8080:80
     environment:
-      PMA_HOST: formato120_mysql
+      VIRTUAL_HOST: ${PMA_URL}
+      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+      PMA_HOST: ${MSQL_CONTAINER_NAME}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-
-volumes:
-  db_data:
-  wordpress:
 
 networks:
   default:
     external:
-      name: nginx-proxy
+            name: nginx-proxy
