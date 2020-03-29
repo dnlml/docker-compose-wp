@@ -7,8 +7,13 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
-# END WordPress
+<IfModule mod_expires.c>
+ExpiresActive on
 
-RewriteEngine On
-Options +FollowSymLinks
-RewriteRule ^test\.html http://www.google.it/? [R=301,L]
+ExpiresByType image/jpg "access plus 60 days"
+ExpiresByType image/png "access plus 60 days"
+ExpiresByType image/gif "access plus 60 days"
+ExpiresByType image/jpeg "access plus 60 days"
+ExpiresByType image/webp "access plus 60 days"
+</IfModule>
+# END WordPress
