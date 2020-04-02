@@ -1,12 +1,16 @@
 ## Lampish wp setup
-This is a docker setup to have a running nginx (with SSL and HTTP2) that redirect the requests to other containers in which wp is installed. It also create a separated container for mysql and on for phpMyAdmin. A mysql daily backup is available and will keep track of tha latest 10 days.
+This is a docker setup that creates a separated container for wp, mysql and on for phpMyAdmin. A mysql daily backup is available and will keep track of tha latest 10 days.
 
+
+## Requirements
+Nginx proxy from https://github.com/dnlml/docker-compose-nginx-proxy must be already installed and running.
 
 ## How To
 - Install docker
 - Add inside in `public` the wp-content folder.
 - copy .env_example and rename it .env, updating the vars inside.
 - Add a redirect of type A in your hosting table and set a subdomain to be used as phpmyadmin url. make it point to your server IP.
+- At the line 4 of the docker-compose.yml replace formato120_mysql with the $(MSQL_CONTAINER_NAME) value you added in the .env.
 - Run `docker-compose up -d`
 
 
