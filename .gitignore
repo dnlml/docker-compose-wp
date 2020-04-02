@@ -3,7 +3,7 @@ docker-compose_working.yml
 
 public/wp-content/
 db
-
+db_backup/*
 # ignore node dependency directories
 **/node_modules/
 
