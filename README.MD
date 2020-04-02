@@ -3,10 +3,10 @@ This is a docker setup that creates a separated container for wp, mysql and on f
 
 
 ## Requirements
-Nginx proxy from https://github.com/dnlml/docker-compose-nginx-proxy must be already installed and running.
+- Install docker
+- Nginx proxy from https://github.com/dnlml/docker-compose-nginx-proxy must be already installed and running.
 
 ## How To
-- Install docker
 - Add inside in `public` the wp-content folder.
 - copy .env_example and rename it .env, updating the vars inside.
 - Add a redirect of type A in your hosting table and set a subdomain to be used as phpmyadmin url. make it point to your server IP.
