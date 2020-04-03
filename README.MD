@@ -28,7 +28,7 @@ Rename the cloned folder with the name you prefer and remove the `/.git` folder 
 - Add inside in `public` the wp-content folder.
 - rename .env_example in .env (`mv .env_example .env`) and updates the vars inside.
 - Add a redirect of type A in your hosting table and set a subdomain to be used as phpmyadmin url. make it point to your server IP.
-- At the line 4 of the docker-compose.yml replace formato120_mysql with the $(MSQL_CONTAINER_NAME) value you added in the .env.
+- At the line 4 of the docker-compose.yml replace `rename_me_as_MSQL_CONTAINER_NAME` with the $(MSQL_CONTAINER_NAME) value you added in the .env.
 - in the `docker-compose.yml` name the `nginx-proxy` with the name of the network.*
 - Run `docker-compose up -d`
 
