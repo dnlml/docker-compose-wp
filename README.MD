@@ -32,7 +32,7 @@ Rename the cloned folder with the name you prefer and remove the `/.git` folder 
 - in the `docker-compose.yml` name the `nginx-proxy` with the name of the network.*
 - Run `docker-compose up -d`
 
-* If you are using https://github.com/dnlml/docker-compose-nginx-proxy, you can leave it `nginx-proxy` otherwise you should name it accordingly.
+\* If you are using https://github.com/dnlml/docker-compose-nginx-proxy, you can leave it `nginx-proxy` otherwise you should name it accordingly.
 
 
 ### To Backup
