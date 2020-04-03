@@ -16,9 +16,10 @@ This is a docker setup that creates a separated container for wp, mysql and on f
 
 ### To Backup
 - to setup daily backup for the latest 10 days:
-  - create a folder named `db_backup` in the same level of this file
-  - run `crontab -e`
-  - add the following: `0 3 * * * /absolute/path/to/backup.sh`
+  - create a folder named `db_backup` in the same level of this file.
+  - edit the backup.sh file and add the absolute path to the variable SITE_PATH.
+  - run `crontab -e`.
+  - add the following: `0 3 * * * sh /absolute/path/to/backup.sh`.
 
 
 ### To connect to one container
